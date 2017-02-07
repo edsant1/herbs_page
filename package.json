@@ -1,6 +1,6 @@
 {
-  "name": "trello-clone",
-  "version": "0.0.0",
+  "name": "Herbs-page",
+  "version": "0.1.0",
   "private": true,
   "scripts": {
     "start": "node ./bin/www"
