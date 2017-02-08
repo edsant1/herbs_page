@@ -39,6 +39,7 @@ h1.header-title {
 nav .brand-logo {
 	text-align: center;
 	margin-left: 20px;
+	cursor: pointer;
 }
 
 main {
@@ -46,7 +47,7 @@ main {
 	flex-basis: auto;
 }
 
-main .panel {
+main .panel1 {
 	background: url(../pictures/synthwavecityscape-copy.jpg) no-repeat fixed;
 	background-size: cover;
 }
@@ -54,10 +55,12 @@ main .panel {
 main .banner {
 	display: flex;
 	align-items: center; 
+	height: 500px;
 }
 
-main .banner.panel1 {
-	height: 500px;
+main .panel2 {
+	background: url(../pictures/lights.jpg) no-repeat fixed;
+	background-size: cover;
 }
 
 .services {

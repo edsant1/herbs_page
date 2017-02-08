@@ -2,7 +2,7 @@ import React from 'react';
 
 class Header extends React.Component {
 
-	headerHeight() {
+	componentDidMount() {
 		const header = document.querySelector('.header-panel');
 		header.style.height = window.innerHeight + 'px';
 	}
@@ -10,7 +10,7 @@ class Header extends React.Component {
 	render() {
 		return(
 			<div className="header-panel row">
-				<h1 className="header-title center">Landscape Artisan</h1>
+				<h1 className="header-title center">Nature Artisans</h1>
 			</div>
 		)
 	}

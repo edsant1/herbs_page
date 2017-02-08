@@ -1,6 +1,7 @@
 import React from 'react';
 import Header from '../components/Header';
 import LandscapePanel from '../components/LandscapePanel';
+import ChristmasLights from '../components/ChristmasLights';
 
 
 const App = () => (
@@ -25,6 +26,7 @@ const App = () => (
   	<main>
   		<Header />
   		<LandscapePanel />
+  		<ChristmasLights />
   	</main>
   </div>
 );

@@ -1,6 +1,14 @@
 import React from 'react';
 
 class LandscapePanel extends React.Component {
+	constructor(props) {
+		super(props);
+		this.goToLandscape = this.goToLandscape.bind(this);
+	}
+
+	goToLandscape() {
+
+	}
 
 	render() {
 		return(
