@@ -1,14 +1,7 @@
 import React from 'react';
+import $ from 'jquery';
 
 class LandscapePanel extends React.Component {
-	constructor(props) {
-		super(props);
-		this.goToLandscape = this.goToLandscape.bind(this);
-	}
-
-	goToLandscape() {
-
-	}
 
 	render() {
 		return(
