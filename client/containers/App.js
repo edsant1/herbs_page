@@ -2,6 +2,7 @@ import React from 'react';
 import Header from '../components/Header';
 import LandscapePanel from '../components/LandscapePanel';
 import ChristmasLights from '../components/ChristmasLights';
+import Contact from '../components/Contact';
 
 
 class App extends React.Component {
@@ -11,10 +12,14 @@ class App extends React.Component {
 	}
 
 	goTo(e) {
+
 		if(e.target === this.refs.land) {
+			landscape.classList.add('activated');
 			(window.scrollTo(0, landscape.offsetTop));
 		}if(e.target === this.refs.lights) {
 			window.scrollTo(0, lightPanel.offsetTop);
+		}if(e.target === this.refs.contact) {
+			window.scrollTo(0, contactPanel.offsetTop);
 		}
 	}
 
@@ -42,6 +47,7 @@ class App extends React.Component {
 		  		<Header />
 		  		<LandscapePanel />
 		  		<ChristmasLights />
+		  		<Contact />
 		  	</main>
 		  </div>
   	)

@@ -53,21 +53,43 @@ main {
 	flex-basis: auto;
 }
 
-main .panel1 {
-	background: url(../pictures/synthwavecityscape-copy.jpg) no-repeat fixed;
-	background-size: cover;
-}
-
 main .banner {
 	display: flex;
 	align-items: center; 
 	height: 500px;
+	color:white;
+  font-size: 7vw;
+  text-shadow: 3px 4px 0 rgba(0,0,0,0.2);
+  justify-content: center;
 }
+
+main .panel1 {
+	background: url(../pictures/landscape1.jpg) no-repeat fixed;
+	height: 550px;
+	background-size: cover;
+	transition: background-color 0.1s;
+	cursor: pointer;
+}
+
+main .panel1.hovered {
+	transition: 0.1s;
+	background-color: rgba(0,0,0,0.5);
+}
+
 
 main .panel2 {
 	background: url(../pictures/lights.jpg) no-repeat fixed;
+	height: 550px;
 	background-size: cover;
 }
+
+main .panel3 {
+	background: url(../pictures/contact.jpg) no-repeat fixed;
+	height: 550px;
+	background-size: cover;
+}
+
+
 
 .services {
 	width:100%;
