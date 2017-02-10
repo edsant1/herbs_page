@@ -15,7 +15,7 @@ class App extends React.Component {
 
 		if(e.target === this.refs.land) {
 			landscape.classList.add('activated');
-			(window.scrollTo(0, landscape.offsetTop));
+			window.scrollTo(0, landscape.offsetTop);
 		}if(e.target === this.refs.lights) {
 			window.scrollTo(0, lightPanel.offsetTop);
 		}if(e.target === this.refs.contact) {

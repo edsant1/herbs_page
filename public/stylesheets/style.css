@@ -2,8 +2,9 @@ body {
 	background-color: #edefed;
 }
 nav {
-	background:url(http://wes.io/iEgP/wow-so-deep.jpg)center center / cover no-repeat fixed padding-box border-box rgba(0, 0, 0, 0);
+	/*background:url(http://wes.io/iEgP/wow-so-deep.jpg)center center / cover no-repeat fixed padding-box border-box rgba(0, 0, 0, 0);*/
 	box-shadow: 0 0 0 rgba(0,0,0,0) !important;
+	position: fixed;
 }
 
 nav ul a.nav-links {
@@ -54,26 +55,36 @@ main {
 
 main .banner {
 	display: flex;
-	align-items: center; 
+/*	align-items: center; */
 	height: 500px;
 	color:white;
-  font-size: 7vw;
+/*  font-size: 7vw;*/
   text-shadow: 3px 4px 0 rgba(0,0,0,0.2);
-  justify-content: center;
+  flex-direction: column;
+  flex: 1;
+/*  justify-content: center;*/
 }
 
 main .panel1 {
 	background: url(../pictures/landscape1.jpg) no-repeat fixed;
 	height: 550px;
 	background-size: cover;
-	transition: background-color 0.1s;
+	transition-duration: 1s;
+	transition-timing-function: cubic-bezier(0.46,-0.18, 0.58, 1);
 	cursor: pointer;
+}
+
+main .panel1.activated {
+  transition-duration:1s;
+  transition-timing-function: cubic-bezier(0.46,-0.18, 0.58, 1);
 }
 
 main .overlaid {
 	display: flex;
+	flex: 1;
 	align-items: center;
 	justify-content: center;
+	flex-direction: column;
 }
 
 main .overlaid:hover {
@@ -92,6 +103,8 @@ main .panel3 {
 	background: url(../pictures/contact.jpg) no-repeat fixed;
 	height: 550px;
 	background-size: cover;
+	flex: 1;
+	flex-direction: column;
 }
 
 
