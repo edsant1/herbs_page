@@ -4,7 +4,6 @@ body {
 nav {
 	background:url(http://wes.io/iEgP/wow-so-deep.jpg)center center / cover no-repeat fixed padding-box border-box rgba(0, 0, 0, 0);
 	box-shadow: 0 0 0 rgba(0,0,0,0) !important;
-	z-index: 2;
 }
 
 nav ul a.nav-links {
@@ -71,9 +70,15 @@ main .panel1 {
 	cursor: pointer;
 }
 
-main .panel1.hovered {
-	transition: 0.1s;
-	background-color: rgba(0,0,0,0.5);
+main .overlaid {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+main .overlaid:hover {
+	background: rgba(0,0,0,0.50);
+	cursor: pointer;
 }
 
 
@@ -97,4 +102,5 @@ main .panel3 {
 	color:white;
   font-size: 7vw;
   text-shadow: 3px 4px 0 rgba(0,0,0,0.2);
+  position: relative;
 }

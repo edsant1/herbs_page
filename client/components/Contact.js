@@ -6,7 +6,9 @@ class Contact extends React.Component {
 		return(
 			<div className="row panel">
 				<div className="banner panel3">
-					<h4 className="services center">Contact Us</h4>
+					<div className="overlaid" style={{height: '550px', width: '100%'}}>
+						<h4 className="services center">Contact Us</h4>
+					</div>
 				</div>
 			</div>
 		)

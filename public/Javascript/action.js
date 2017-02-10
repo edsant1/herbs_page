@@ -13,7 +13,7 @@ brand.addEventListener('mouseover', backgroundChange);
 brand.addEventListener('mouseleave', revertBack);
 
 const landscape = document.querySelector('.panel1');
-const lightPanel = document.querySelector('.panel2')
+const lightPanel = document.querySelector('.panel2');
 const contactPanel = document.querySelector('.panel3');
 const landPanelBottom = landscape.offsetTop + landscape.offsetHeight;
 // const startingPoint = (window.scrollY + window.innerHeight);
