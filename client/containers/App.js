@@ -9,11 +9,11 @@ class App extends React.Component {
 		this.goTo = this.goTo.bind(this);
 	}
 
-	// componentDidMount() {
- //    window.jQuery('.button-collapse').sideNav({
- //      closeOnClick: true
- //    });
- //  }
+  componentDidMount() {
+    window.jQuery('.button-collapse').sideNav({
+      closeOnClick: true
+    });
+  }
 
 	goTo(e) {
 
@@ -46,9 +46,9 @@ class App extends React.Component {
 		  				<li><a ref="contact" className="nav-links contact" onClick={this.goTo}>Contact Us</a></li>
 		  			</ul>
 		  			<ul className="side-nav" id="mobile">
-		  				<li><a>Landscaping</a></li>
-		  				<li><a>Christmas Lights</a></li>
-		  				<li><a>Contact Us</a></li>
+		  				<li><a ref="land" className="nav-links land" onClick={this.goTo}>Landscaping</a></li>
+		  				<li><a ref="lights" className="nav-links lights" onClick={this.goTo}>Christmas Lights</a></li>
+		  				<li><a ref="contact" className="nav-links contact" onClick={this.goTo}>Contact Us</a></li>
 		  			</ul>
 		  		</div>
 		  	</nav>

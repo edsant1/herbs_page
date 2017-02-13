@@ -6,10 +6,7 @@ nav {
 	/*background:url(http://wes.io/iEgP/wow-so-deep.jpg)center center / cover no-repeat fixed padding-box border-box rgba(0, 0, 0, 0);*/
 	box-shadow: 0 0 0 rgba(0,0,0,0) !important;
 	position: fixed;
-}
-
-#sidenav-overlay{
-  position: static !important;
+	z-index: 999;
 }
 
 nav ul a.nav-links {
