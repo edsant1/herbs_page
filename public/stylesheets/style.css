@@ -1,10 +1,15 @@
 body {
 	background-color: #edefed;
+	font-family: sans-serif;
 }
 nav {
 	/*background:url(http://wes.io/iEgP/wow-so-deep.jpg)center center / cover no-repeat fixed padding-box border-box rgba(0, 0, 0, 0);*/
 	box-shadow: 0 0 0 rgba(0,0,0,0) !important;
 	position: fixed;
+}
+
+#sidenav-overlay{
+  position: static !important;
 }
 
 nav ul a.nav-links {
@@ -72,11 +77,6 @@ main .panel1 {
 	transition-duration: 1s;
 	transition-timing-function: cubic-bezier(0.46,-0.18, 0.58, 1);
 	cursor: pointer;
-}
-
-main .panel1.activated {
-  transition-duration:1s;
-  transition-timing-function: cubic-bezier(0.46,-0.18, 0.58, 1);
 }
 
 main .overlaid {

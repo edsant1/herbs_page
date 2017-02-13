@@ -1,8 +1,6 @@
 import React from 'react';
-import Header from '../components/Header';
-import LandscapePanel from '../components/LandscapePanel';
-import ChristmasLights from '../components/ChristmasLights';
-import Contact from '../components/Contact';
+import Home from '../components/Home';
+import $ from 'jquery';
 
 
 class App extends React.Component {
@@ -11,15 +9,26 @@ class App extends React.Component {
 		this.goTo = this.goTo.bind(this);
 	}
 
+	// componentDidMount() {
+ //    window.jQuery('.button-collapse').sideNav({
+ //      closeOnClick: true
+ //    });
+ //  }
+
 	goTo(e) {
 
 		if(e.target === this.refs.land) {
-			landscape.classList.add('activated');
-			window.scrollTo(0, landscape.offsetTop);
+			$('html, body').animate({
+    		scrollTop: $('.panel1').offset().top
+			}, 1000);
 		}if(e.target === this.refs.lights) {
-			window.scrollTo(0, lightPanel.offsetTop);
+			$('html, body').animate({
+    		scrollTop: $('.panel2').offset().top
+			}, 1000);
 		}if(e.target === this.refs.contact) {
-			window.scrollTo(0, contactPanel.offsetTop);
+			$('html, body').animate({
+    		scrollTop: $('.panel3').offset().top
+			}, 1000);
 		}
 	}
 
@@ -44,10 +53,7 @@ class App extends React.Component {
 		  		</div>
 		  	</nav>
 		  	<main>
-		  		<Header />
-		  		<LandscapePanel />
-		  		<ChristmasLights />
-		  		<Contact />
+		  	{this.props.children}
 		  	</main>
 		  </div>
   	)
