@@ -16,16 +16,15 @@ class App extends React.Component {
   }
 
 	goTo(e) {
-
-		if(e.target === this.refs.land) {
+		if(e.target.matches('.land')) {
 			$('html, body').animate({
     		scrollTop: $('.panel1').offset().top
 			}, 1000);
-		}if(e.target === this.refs.lights) {
+		}if(e.target.matches('.lights')) {
 			$('html, body').animate({
     		scrollTop: $('.panel2').offset().top
 			}, 1000);
-		}if(e.target === this.refs.contact) {
+		}if(e.target.matches('.contact')) {
 			$('html, body').animate({
     		scrollTop: $('.panel3').offset().top
 			}, 1000);
