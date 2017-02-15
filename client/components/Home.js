@@ -12,7 +12,7 @@ class Home extends React.Component {
 			<div>
 				<Header />
 	  		<Link to="/landscape"><LandscapePanel /></Link>
-	  		<ChristmasLights />
+	  		<Link to="/holidaylights"><ChristmasLights /></Link>
 	  		<Contact />
 			</div>
 		)
