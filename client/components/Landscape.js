@@ -17,6 +17,9 @@ class Landscape extends React.Component {
 					 Pellentesque commodo dictum velit id molestie. Maecenas ornare a ligula eu sagittis. Sed auctor,
 					 leo sed condimentum pulvinar, enim nisl facilisis sapien, eu pellentesque eros risus sed sapien.</h5>
 				</div>
+				<div className="row img-div">
+					<img style={{height: '35vh', width: '100%'}} src={'pictures/landscape3.jpg'} alt={'pictures/landscape2copy.jpg'} />
+				</div>
 			</div>
 		)
 	}

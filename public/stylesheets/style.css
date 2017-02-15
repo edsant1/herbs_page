@@ -14,7 +14,7 @@ nav ul a.nav-links {
 }
 
 .overview {
-	padding-top: 75px;
+	padding-top: 4rem;
 	text-align: center;
 }
 
@@ -116,3 +116,26 @@ main .panel3 {
 .center {
 	text-align: center;
 }
+
+.container .row.img-div {
+	max-width: 950px;
+	padding-left: 1.5rem;
+	margin-left: 0;
+	margin-right: 0;
+}
+
+.ft-bkgrd {
+	display: flex;
+	height: 35vh;
+	background-color: #36454f; 
+	color: white;
+	flex-direction: column;
+	align-items: center;
+}
+
+.cp-cby {
+	font-size: .70em;
+}
+
+
+

@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router';
 import Home from '../components/Home';
+import Footer from '../components/Footer';
 import $ from 'jquery';
 
 
@@ -55,6 +56,7 @@ class App extends React.Component {
 		  	<main>
 		  	{this.props.children}
 		  	</main>
+		  	<Footer />
 		  </div>
   	)
 	}
