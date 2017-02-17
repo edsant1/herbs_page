@@ -60,9 +60,7 @@ main {
 main .banner {
 	display: flex;
 /*	align-items: center; */
-	height: 500px;
 	color:white;
-/*  font-size: 7vw;*/
   text-shadow: 3px 4px 0 rgba(0,0,0,0.2);
   flex-direction: column;
   flex: 1;
@@ -73,7 +71,6 @@ main .panel1 {
 	background: url(../pictures/landscape1.jpg) no-repeat fixed;
 	height: 550px;
 	background-size: cover;
-	cursor: pointer;
 }
 
 main .overlaid {
@@ -85,8 +82,8 @@ main .overlaid {
 }
 
 main .overlaid:hover {
-	background: rgba(0,0,0,0.50);
 	cursor: pointer;
+	background: rgba(0,0,0,0.50);
 }
 
 
@@ -122,12 +119,13 @@ main .panel3 {
 	padding-left: 1.5rem;
 	margin-left: 0;
 	margin-right: 0;
+	margin-top: 5rem;
 }
 
 .ft-bkgrd {
 	display: flex;
 	height: 35vh;
-	background-color: #36454f; 
+	background-color: #303c40; 
 	color: white;
 	flex-direction: column;
 	align-items: center;

@@ -1,8 +1,13 @@
 import React from 'react';
+import $ from 'jquery';
 
 class Landscape extends React.Component {
 	constructor(props) {
 		super(props);
+	}
+
+	componentDidMount() {
+ 		window.scrollTo(0,0);
 	}
 	
 	render() {

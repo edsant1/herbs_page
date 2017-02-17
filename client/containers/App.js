@@ -19,15 +19,15 @@ class App extends React.Component {
 
 	goTo(e) {
 		if(e.target.matches('.land')) {
-			$('html, body').animate({
+			$('html, body').clearQueue().animate({
     		scrollTop: $('.panel1').offset().top
 			}, 1000);
 		}if(e.target.matches('.lights')) {
-			$('html, body').animate({
+			$('html, body').clearQueue().animate({
     		scrollTop: $('.panel2').offset().top
 			}, 1000);
 		}if(e.target.matches('.contact')) {
-			$('html, body').animate({
+			$('html, body').clearQueue().animate({
     		scrollTop: $('.panel3').offset().top
 			}, 1000);
 		}
