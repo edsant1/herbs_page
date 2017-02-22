@@ -14,14 +14,23 @@ nav ul a.nav-links {
 }
 
 .overview {
+	margin-bottom: 1rem;
 	padding-top: 4rem;
 	text-align: center;
+	position: relative;
 }
 
 
 h1.header-title {
 	margin: 0 0 0;
 	width: 100%;
+}
+
+.hd-ovrly {
+	background: rgba(0,0,0,0.20);
+	height: inherit;
+	align-items: inherit;
+	display: flex;
 }
 
 .header-panel {
@@ -36,7 +45,7 @@ h1.header-title {
 	text-align: center;
 	color:white;
   font-size: 7vw;
-  text-shadow: 3px 4px 0 rgba(0,0,0,0.2);
+  text-shadow: 3px 4px 0 rgba(0,0,0,0.35);
   justify-content: center;
 }
 
@@ -61,7 +70,7 @@ main .banner {
 	display: flex;
 /*	align-items: center; */
 	color:white;
-  text-shadow: 3px 4px 0 rgba(0,0,0,0.2);
+  text-shadow: 3px 4px 0 rgba(0,0,0,0.35);
   flex-direction: column;
   flex: 1;
 /*  justify-content: center;*/
@@ -79,6 +88,7 @@ main .overlaid {
 	align-items: center;
 	justify-content: center;
 	flex-direction: column;
+	background: rgba(0,0,0,0.10);
 }
 
 main .overlaid:hover {
@@ -106,7 +116,7 @@ main .panel3 {
 	text-align: center;
 	color:white;
   font-size: 7vw;
-  text-shadow: 3px 4px 0 rgba(0,0,0,0.2);
+  text-shadow: 3px 4px 0 rgba(0,0,0,0.35);
   position: relative;
 }
 
@@ -114,12 +124,35 @@ main .panel3 {
 	text-align: center;
 }
 
-.container .row.img-div {
-	max-width: 950px;
-	padding-left: 1.5rem;
+.container .row.imgs-div {
 	margin-left: 0;
 	margin-right: 0;
 	margin-top: 5rem;
+	position: relative;
+}
+
+.carousel-cntrl {
+	background: rgba(0,0,0,0);
+	border: none;
+	margin: 0;
+	padding: 0;
+	position: absolute;
+}
+
+.carousel-cntrl.cntrl-left {
+	left: -1px;
+	bottom: 50%;
+}
+
+.carousel-cntrl.cntrl-right {
+	right: 1px;
+	bottom: 50%;
+}
+
+.slides-wrapper {
+	max-width: 90%;
+	margin-left: 3.3rem;
+	margin-right: 3.3rem;
 }
 
 .ft-bkgrd {

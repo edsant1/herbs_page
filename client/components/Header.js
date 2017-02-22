@@ -10,7 +10,9 @@ class Header extends React.Component {
 	render() {
 		return(
 			<div className="header-panel row">
-				<h1 className="header-title center">Nature Artisans</h1>
+				<div className="hd-ovrly" style={{width: '100%'}}>
+					<h1 className="header-title">Nature Artisans</h1>
+				</div>
 			</div>
 		)
 	}
