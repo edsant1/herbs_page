@@ -13,9 +13,10 @@ class Landscape extends React.Component {
 	}
 
 	scrollLeft(e) {
-
+		console.log(this);
 		this.refs.slide1.style.setProperty('-webkit-box-ordinal-group', 1);
 		this.refs.slide2.style.setProperty('-webkit-box-ordinal-group', 2);
+		// this.refs.slide3.style.setProperty('-webkit-box-ordinal-group', 3);
 	}
 
 	scrollRight(e) {
@@ -52,11 +53,14 @@ class Landscape extends React.Component {
 					</div>
 					<div className="slides-wrapper">
 						<div ref="slide1" className="slides slide1">
-							<img style={{height: '400px', width: '100%'}} src={'pictures/landscape3.jpg'} alt={'pictures/landscape2copy.jpg'} />
+							<img style={{height: '400px', width: '100%'}} src={'pictures/retaining1.jpg'} alt={'pictures/landscape2copy.jpg'} />
 						</div>
 						<div ref="slide2" className="slides slide2">
-							<img style={{height: '400px', width: '100%'}} src={'pictures/landscape2.jpg'} alt={'pictures/landscape2copy.jpg'} />
-						</div>						
+							<img style={{height: '400px', width: '100%'}} src={'pictures/retaining2.jpg'} alt={'pictures/landscape2copy.jpg'} />
+						</div>
+						<div ref="slide3" className="slides slide3">
+							<img style={{height: '400px', width: '100%'}} src={'pictures/retaining3.jpg'} alt={'pictures/landscape2copy.jpg'} />
+						</div>							
 					</div>
 				</div>
 			</div>

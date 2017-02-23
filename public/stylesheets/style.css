@@ -150,9 +150,9 @@ main .panel3 {
 }
 
 .slides-wrapper {
-	max-width: 90%;
-	margin-left: 3.3rem;
-	margin-right: 3.3rem;
+	max-width: 70%;
+	margin-left: 9.3rem;
+	margin-right: 6.3rem;
 	position: relative;
 	overflow: hidden;
 	-webkit-box-orient: horizontal;
@@ -161,6 +161,7 @@ main .panel3 {
 
 .slides {
 	list-style-type: none;
+	width: 100%;
 
 }
 
