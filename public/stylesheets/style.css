@@ -153,6 +153,15 @@ main .panel3 {
 	max-width: 90%;
 	margin-left: 3.3rem;
 	margin-right: 3.3rem;
+	position: relative;
+	overflow: hidden;
+	-webkit-box-orient: horizontal;
+	display: -webkit-box;
+}
+
+.slides {
+	list-style-type: none;
+
 }
 
 .ft-bkgrd {
