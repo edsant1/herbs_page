@@ -2,7 +2,6 @@
 const brand = document.querySelector('.brand-logo');
 
 function backgroundChange(e) {
-	console.log(e);
 	brand.classList.add('active');
 }
 

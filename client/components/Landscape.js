@@ -6,6 +6,7 @@ class Landscape extends React.Component {
 		super(props);
 		this.scrollLeft = this.scrollLeft.bind(this);
 		this.scrollRight = this.scrollRight.bind(this);
+		this.state = { count: 1 };
 	}
 
 	componentDidMount() {
@@ -13,15 +14,39 @@ class Landscape extends React.Component {
 	}
 
 	scrollLeft(e) {
-		console.log(this);
-		this.refs.slide1.style.setProperty('-webkit-box-ordinal-group', 1);
-		this.refs.slide2.style.setProperty('-webkit-box-ordinal-group', 2);
-		// this.refs.slide3.style.setProperty('-webkit-box-ordinal-group', 3);
+		const pics = document.querySelectorAll('.slides');
+		if(this.state.count >= 0){
+			this.setState({ count: this.state.count - 1});
+		}
 	}
 
 	scrollRight(e) {
-		this.refs.slide1.style.setProperty('-webkit-box-ordinal-group', 2);
-		this.refs.slide2.style.setProperty('-webkit-box-ordinal-group', 1);
+		const picarr = [];
+		const pics = document.querySelectorAll('.slides');
+		pics.forEach(pic => {
+			picarr.push(pic);
+		})
+
+		if(this.state.count === 1) {
+			this.refs.slide1.classList.add('active');
+		}
+		else if(this.state.count <= pics.length) {
+			pics.forEach( (pic) => {
+				pic.classList.remove('active');
+			})
+		}
+		
+		if(this.state.count === pics[this.state.count]) {
+			pics[this.state.count].classList.add('active');
+		}
+
+		if(this.state.count <= pics.length) {
+			this.setState({ count: this.state.count + 1 });
+		}
+		// else if{
+		// 	return this.state.count;
+		// }
+		console.log(pics);
 	}
 	
 	render() {
@@ -52,7 +77,7 @@ class Landscape extends React.Component {
 						</button>
 					</div>
 					<div className="slides-wrapper">
-						<div ref="slide1" className="slides slide1">
+						<div ref="slide1" className="slides slide1 active">
 							<img style={{height: '400px', width: '100%'}} src={'pictures/retaining1.jpg'} alt={'pictures/landscape2copy.jpg'} />
 						</div>
 						<div ref="slide2" className="slides slide2">
