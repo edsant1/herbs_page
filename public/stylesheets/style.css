@@ -161,10 +161,11 @@ main .panel3 {
 .slides {
 	list-style-type: none;
 	width: 100%;
+	-webkit-box-ordinal-group: 2;
 
 }
 
-.slides-wrapper .active{
+.activated{
 	-webkit-box-ordinal-group: 1;
 }
 

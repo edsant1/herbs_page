@@ -6,7 +6,7 @@ class Landscape extends React.Component {
 		super(props);
 		this.scrollLeft = this.scrollLeft.bind(this);
 		this.scrollRight = this.scrollRight.bind(this);
-		this.state = { count: 1 };
+		this.state = { count: 0 };
 	}
 
 	componentDidMount() {
@@ -14,38 +14,54 @@ class Landscape extends React.Component {
 	}
 
 	scrollLeft(e) {
+		const picArr = [];
 		const pics = document.querySelectorAll('.slides');
-		if(this.state.count >= 0){
+		pics.forEach(pic => {picArr.push(pic)})
+
+		if(this.state.count > 0){
 			this.setState({ count: this.state.count - 1});
 		}
+
+		if(this.state.count >= 0) {
+			pics.forEach( (pic) => {
+				pic.classList.remove('activated');
+			})
+			console.log("GETIING hit")
+		}
+
+
+		if(this.state.count <= pics.length - 1) {
+			pics[this.state.count].classList.add('activated');
+		}
+
+		console.log(pics);
 	}
 
 	scrollRight(e) {
-		const picarr = [];
+		const picArr = [];
 		const pics = document.querySelectorAll('.slides');
-		pics.forEach(pic => {
-			picarr.push(pic);
-		})
+		pics.forEach(pic => {picArr.push(pic)})
+		console.log(this.state.count);
 
-		if(this.state.count === 1) {
-			this.refs.slide1.classList.add('active');
-		}
-		else if(this.state.count <= pics.length) {
-			pics.forEach( (pic) => {
-				pic.classList.remove('active');
-			})
+		if(this.state.count < pics.length - 1) {
+			this.setState({ count: this.state.count + 1 });
+			console.log("SHIT");
+			console.log(this.state.count);
 		}
 		
-		if(this.state.count === pics[this.state.count]) {
-			pics[this.state.count].classList.add('active');
-		}
-
-		if(this.state.count <= pics.length) {
-			this.setState({ count: this.state.count + 1 });
-		}
-		// else if{
-		// 	return this.state.count;
+		// if(this.state.count >= 0) {
+		// 	pics.forEach( (pic) => {
+		// 		pic.classList.remove('activated');
+		// 	})
 		// }
+
+		console.log(this.state.count);
+
+		// if(this.state.count < pics.length - 1) {
+		// 	pics[this.state.count].classList.add('activated');
+		// 	console.log("FUCK")
+		// }
+
 		console.log(pics);
 	}
 	
@@ -77,7 +93,7 @@ class Landscape extends React.Component {
 						</button>
 					</div>
 					<div className="slides-wrapper">
-						<div ref="slide1" className="slides slide1 active">
+						<div ref="slide1" className="slides slide1">
 							<img style={{height: '400px', width: '100%'}} src={'pictures/retaining1.jpg'} alt={'pictures/landscape2copy.jpg'} />
 						</div>
 						<div ref="slide2" className="slides slide2">
