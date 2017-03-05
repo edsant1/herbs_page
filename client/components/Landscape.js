@@ -6,7 +6,6 @@ class Landscape extends React.Component {
 		super(props);
 		this.scrollLeft = this.scrollLeft.bind(this);
 		this.scrollRight = this.scrollRight.bind(this);
-		this.handleState = this.handleState.bind(this);
 		this.state = { count: 0 };
 	}
 
@@ -14,60 +13,42 @@ class Landscape extends React.Component {
  		window.scrollTo(0,0);
 	}
 
-	handleState() {
-		this.setState({count: this.state.count + 1})
-	}
-
 	scrollLeft(e) {
-		const picArr = [];
 		const pics = document.querySelectorAll('.slides');
-		pics.forEach(pic => {picArr.push(pic)})
 
 		if(this.state.count > 0){
-			this.setState({ count: this.state.count - 1});
+			this.setState({ count: this.state.count - 1}, () => {
+				if(this.state.count >= 0) {
+					pics.forEach( (pic) => {
+						pic.classList.remove('activated');
+					})
+				}
+
+				if(this.state.count <= pics.length - 1) {
+					pics[this.state.count].classList.add('activated');
+				}
+				console.log(pics);
+			});
 		}
-
-		if(this.state.count >= 0) {
-			pics.forEach( (pic) => {
-				pic.classList.remove('activated');
-			})
-			console.log("GETIING hit")
-		}
-
-
-		if(this.state.count <= pics.length - 1) {
-			pics[this.state.count].classList.add('activated');
-		}
-
-		console.log(pics);
 	}
 
-	scrollRight() {
-		// const picArr = [];
+	scrollRight(e) {
 		const pics = document.querySelectorAll('.slides');
-		// pics.forEach(pic => {picArr.push(pic)})
-		console.log(this.state.count, "before");
 
 		if(this.state.count < pics.length - 1) {
-			this.handleState();
-			console.log("SHIT");
-			console.log(this.state.count);
+			this.setState({count: this.state.count + 1}, () => {
+				if(this.state.count >= 0) {
+					pics.forEach( (pic) => {
+						pic.classList.remove('activated');
+					})
+				}
+
+				if(this.state.count < pics.length) {
+					pics[this.state.count].classList.add('activated');
+				}
+				console.log(pics);
+			})
 		}
-		
-		// if(this.state.count >= 0) {
-		// 	pics.forEach( (pic) => {
-		// 		pic.classList.remove('activated');
-		// 	})
-		// }
-
-		console.log(this.state.count, "why tho");
-
-		// if(this.state.count < pics.length - 1) {
-		// 	pics[this.state.count].classList.add('activated');
-		// 	console.log("FUCK")
-		// }
-
-		console.log(pics);
 	}
 	
 	render() {
