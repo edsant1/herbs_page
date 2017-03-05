@@ -35,8 +35,6 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', routes);
-app.use('/getinfo', (req, res, next) => {console.log(req.body)
-  res.send(200, "OK"); });
 app.use('*', routes);
 
 // catch 404 and forward to error handler
