@@ -6,11 +6,16 @@ class Landscape extends React.Component {
 		super(props);
 		this.scrollLeft = this.scrollLeft.bind(this);
 		this.scrollRight = this.scrollRight.bind(this);
+		this.handleState = this.handleState.bind(this);
 		this.state = { count: 0 };
 	}
 
 	componentDidMount() {
  		window.scrollTo(0,0);
+	}
+
+	handleState() {
+		this.setState({count: this.state.count + 1})
 	}
 
 	scrollLeft(e) {
@@ -37,14 +42,14 @@ class Landscape extends React.Component {
 		console.log(pics);
 	}
 
-	scrollRight(e) {
-		const picArr = [];
+	scrollRight() {
+		// const picArr = [];
 		const pics = document.querySelectorAll('.slides');
-		pics.forEach(pic => {picArr.push(pic)})
-		console.log(this.state.count);
+		// pics.forEach(pic => {picArr.push(pic)})
+		console.log(this.state.count, "before");
 
 		if(this.state.count < pics.length - 1) {
-			this.setState({ count: this.state.count + 1 });
+			this.handleState();
 			console.log("SHIT");
 			console.log(this.state.count);
 		}
@@ -55,7 +60,7 @@ class Landscape extends React.Component {
 		// 	})
 		// }
 
-		console.log(this.state.count);
+		console.log(this.state.count, "why tho");
 
 		// if(this.state.count < pics.length - 1) {
 		// 	pics[this.state.count].classList.add('activated');
