@@ -131,6 +131,10 @@ main .panel3 {
 	position: relative;
 }
 
+.sec-nav-color {
+	background-color: #303c40; 
+}
+
 .carousel-cntrl {
 	background: rgba(0,0,0,0);
 	border: none;
