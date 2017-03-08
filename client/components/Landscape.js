@@ -9,6 +9,7 @@ class Landscape extends React.Component {
 		this.scrollRight = this.scrollRight.bind(this);
 		this.fixedServRow = this.fixedServRow.bind(this);
 		this.goToTop = this.goToTop.bind(this);
+		this.goToLinks = this.goToLinks.bind(this);
 		this.state = { count: 0 };
 	}
 
@@ -85,6 +86,20 @@ class Landscape extends React.Component {
 			}, 700);
 		}
 	}
+
+	goToLinks(e) {
+		const sprinklerId = e.nativeEvent.toElement;
+		const bottomOfNav = document.querySelector('.sec-nav-color').offsetHeight;
+		const servLinks = document.querySelector('.serv-row').offsetHeight;
+		const bottomOfNewLinks = bottomOfNav + servLinks;
+
+		if(sprinklerId.matches('#toSprinklers')) {
+			$('html, body').clearQueue().animate({
+    		scrollTop: $('.sprinklers').offset().top - bottomOfNewLinks
+			}, 700);
+		}
+
+	}
 	
 	render() {
 		return(
@@ -93,7 +108,7 @@ class Landscape extends React.Component {
 				<div className="filler" style={{width: '100%', height: '6rem',}}></div>
 				<div className="serv-row">
 					<span id="topOfPage" className="top" onClick={this.goToTop}>Go To Top</span>
-					<span className="work">Sprinklers</span>
+					<span id="toSprinklers" className="work" onClick={this.goToLinks}>Sprinklers</span>
 					<span className="work">Fencing</span>
 					<span className="work">Retaining Walls</span>
 				</div>
@@ -128,6 +143,21 @@ class Landscape extends React.Component {
 								<img style={{height: '400px', width: '100%'}} src={'pictures/retaining3.jpg'} alt={'pictures/landscape2copy.jpg'} />
 							</div>							
 						</div>
+					</div>
+					<div className="row">
+						<h2 className="sprinklers">Sprinklers</h2>
+						&nbsp;
+						<h5>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam eget porta nulla, id
+						 lacinia dui. Mauris euismod iaculis sem. Suspendisse finibus, augue nec sollicitudin rutrum,
+						 velit mauris molestie enim, et commodo elit velit id mauris. Etiam at efficitur metus, 
+						 sed posuere nulla. Nullam porta viverra faucibus. Nam magna diam, pharetra sed sollicitudin 
+						 consequat, consectetur id eros. Nam fringilla lectus sit amet nunc vestibulum, sit amet 
+						 bibendum erat sollicitudin. Etiam vitae bibendum purus. Cras blandit felis in commodo imperdiet.
+						 Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Quisque et
+						 odio nisl. Nulla sagittis sagittis dui, quis commodo ante. Nulla vulputate vehicula quam a tincidunt.
+						 Ut scelerisque nisl sed justo maximus interdum. Cras est massa, pellentesque at suscipit at,
+						 vestibulum et ligula. Donec sollicitudin tortor tellus, vitae dignissim sapien mattis sit
+						 amet.</h5>
 					</div>
 				</div>
 			</div>
