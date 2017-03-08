@@ -8,6 +8,7 @@ class Landscape extends React.Component {
 		this.scrollLeft = this.scrollLeft.bind(this);
 		this.scrollRight = this.scrollRight.bind(this);
 		this.fixedServRow = this.fixedServRow.bind(this);
+		this.goToTop = this.goToTop.bind(this);
 		this.state = { count: 0 };
 	}
 
@@ -74,6 +75,16 @@ class Landscape extends React.Component {
 			document.body.classList.remove('serv-row-fixed');
 		}
 	}
+
+	goToTop(e) {
+		const topOfPageId = e.nativeEvent.toElement;
+
+		if(topOfPageId.matches('#topOfPage')) {
+			$('html, body').clearQueue().animate({
+    		scrollTop: (0,0)
+			}, 700);
+		}
+	}
 	
 	render() {
 		return(
@@ -81,7 +92,7 @@ class Landscape extends React.Component {
 				<SecondaryNav />
 				<div className="filler" style={{width: '100%', height: '6rem',}}></div>
 				<div className="serv-row">
-					<span className="top">Go To Top</span>
+					<span id="topOfPage" className="top" onClick={this.goToTop}>Go To Top</span>
 					<span className="work">Sprinklers</span>
 					<span className="work">Fencing</span>
 					<span className="work">Retaining Walls</span>
