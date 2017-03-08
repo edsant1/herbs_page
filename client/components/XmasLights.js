@@ -4,13 +4,52 @@ import SecondaryNav from './SecondaryNav';
 class XmasLights extends React.Component {
 	constructor(props) {
 		super(props);
+		this.scrollLeft = this.scrollLeft.bind(this);
+		this.scrollRight = this.scrollRight.bind(this);
+		this.state = { count: 0 };
 	}
 
 	componentDidMount() {
  		window.scrollTo(0,0);
- 	  window.jQuery('.button-collapse').sideNav({
+ 		window.jQuery('.button-collapse').sideNav({
   		closeOnClick: true
   	});
+	}
+
+	scrollLeft(e) {
+		const pics = document.querySelectorAll('.slides');
+
+		if(this.state.count > 0){
+			this.setState({ count: this.state.count - 1}, () => {
+				if(this.state.count >= 0) {
+					pics.forEach( (pic) => {
+						pic.classList.remove('activated');
+					})
+				}
+
+				if(this.state.count <= pics.length - 1) {
+					pics[this.state.count].classList.add('activated');
+				}
+			})
+		}
+	}
+
+	scrollRight(e) {
+		const pics = document.querySelectorAll('.slides');
+
+		if(this.state.count < pics.length - 1) {
+			this.setState({count: this.state.count + 1}, () => {
+				if(this.state.count >= 0) {
+					pics.forEach( (pic) => {
+						pic.classList.remove('activated');
+					})
+				}
+
+				if(this.state.count < pics.length) {
+					pics[this.state.count].classList.add('activated');
+				}
+			})
+		}
 	}
 	
 	render() {
