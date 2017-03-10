@@ -56,7 +56,7 @@ class XmasLights extends React.Component {
 		return(
 			<div>
 				<SecondaryNav />
-				<div className="container overview">
+				<div className="overview">
 					<div className="row">
 						<h2>This is the Holiday lights page</h2>
 						&nbsp;

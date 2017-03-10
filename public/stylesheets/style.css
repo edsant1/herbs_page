@@ -5,8 +5,15 @@ body {
 }
 
 h2 {
+	font-size: 10vh !important;
 	font-weight: 100 !important;
 }
+
+p {
+	font-size: 4vh;
+	text-align: left;
+}
+
 nav {
 	/*background:url(http://wes.io/iEgP/wow-so-deep.jpg)center center / cover no-repeat fixed padding-box border-box rgba(0, 0, 0, 0);*/
 	box-shadow: 0 0 0 rgba(0,0,0,0) !important;
@@ -21,7 +28,10 @@ nav ul a.nav-links {
 .overview {
 	margin-bottom: 1rem;
 	padding-top: 4rem;
-	text-align: center;
+	text-align: left;
+	padding-left: 15%;
+	padding-right: 15%;	
+	padding-bottom: 6rem
 	/*position: relative;*/
 }
 
@@ -154,7 +164,7 @@ main .panel3 {
 body.serv-row-fixed .serv-row {
 	transition: all .7s;
 	position: fixed;
-	height: 4.2rem;
+	height: 4rem;
 	background-color: #303c40;
 	color: white;
 	z-index: 8;
@@ -202,15 +212,14 @@ body.serv-row-fixed span.top {
 
 .carousel-cntrl.cntrl-left {
 	background-color: #edefed;
-	height: 100%;
-	left: -1px;
+	height: 55%;
 	width: 5rem;
 }
 
 .carousel-cntrl.cntrl-right {
 	background-color: #edefed;
-	height: 100%;
-	right: 1px;
+	height: 55%;
+	right: 16%;
 	width: 5rem;
 }
 
@@ -234,6 +243,28 @@ body.serv-row-fixed span.top {
 	-webkit-box-ordinal-group: 1;
 }
 
+.sprinkDiv {
+	align-items: center;
+	padding-top: 6rem;
+	padding-bottom: 6rem;
+}
+
+#sprinklerDscrpt {
+	padding-left: 15%;
+	padding-right: 15%;	
+}
+
+.fenceDiv {
+	align-items: center;
+	padding-top: 6rem;
+	padding-bottom: 6rem;
+}
+
+#fenceDscrpt {
+	padding-left: 15%;
+	padding-right: 15%;	
+}
+
 .ft-bkgrd {
 	display: flex;
 	height: 35vh;
@@ -243,7 +274,7 @@ body.serv-row-fixed span.top {
 	align-items: center;
 }
 
-.cp-cby {
+div.cp-cby p{
 	font-size: .70em;
 }
 

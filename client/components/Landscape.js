@@ -18,11 +18,13 @@ class Landscape extends React.Component {
  		window.jQuery('.button-collapse').sideNav({
   		closeOnClick: true
   	});
+  	document.body.classList.remove('serv-row-fixed');
   	window.addEventListener('scroll', this.fixedServRow);
 	}
 
 	componentWillUnmount() {
 		window.removeEventListener('scroll', this.fixedServRow);
+		document.body.classList.remove('serv-row-fixed');
 	}
 
 	scrollLeft(e) {
@@ -88,14 +90,20 @@ class Landscape extends React.Component {
 	}
 
 	goToLinks(e) {
-		const sprinklerId = e.nativeEvent.toElement;
+		const elementId = e.nativeEvent.toElement;
 		const bottomOfNav = document.querySelector('.sec-nav-color').offsetHeight;
 		const servLinks = document.querySelector('.serv-row').offsetHeight;
 		const bottomOfNewLinks = bottomOfNav + servLinks;
 
-		if(sprinklerId.matches('#toSprinklers')) {
+		if(elementId.matches('#toSprinklers')) {
 			$('html, body').clearQueue().animate({
-    		scrollTop: $('.sprinklers').offset().top - bottomOfNewLinks
+    		scrollTop: $('.sprinkDiv').offset().top - bottomOfNewLinks
+			}, 700);
+		}
+
+		if(elementId.matches('#toFencing')) {
+			$('html, body').clearQueue().animate({
+				scrollTop: $('.fenceDiv').offset().top - bottomOfNewLinks
 			}, 700);
 		}
 
@@ -109,19 +117,19 @@ class Landscape extends React.Component {
 				<div className="serv-row">
 					<span id="topOfPage" className="top" onClick={this.goToTop}>Go To Top</span>
 					<span id="toSprinklers" className="work" onClick={this.goToLinks}>Sprinklers</span>
-					<span className="work">Fencing</span>
+					<span id="toFencing"className="work" onClick={this.goToLinks}>Fencing</span>
 					<span className="work">Retaining Walls</span>
 				</div>
 				<hr />
-				<div className="container overview">
+				<div className="overview">
 					<div className="row">
 						<h2>Maintenance</h2>
 						&nbsp;
-						<h5>Our family has been providing landscape maintenance and yard clean-ups 
+						<p>Our family has been providing landscape maintenance and yard clean-ups 
 						along the Wasatch Front since 2007. Our goal is to provide you with fast 
 						services that leave a lasting impression. Here are some quick samples of some
 						of our work. Call us to come out to your home and provide you with a free
-						estimate.</h5>
+						estimate.</p>
 					</div>
 					<div className="row imgs-div">
 						<div className="controls">
@@ -144,20 +152,52 @@ class Landscape extends React.Component {
 							</div>							
 						</div>
 					</div>
-					<div className="row">
-						<h2 className="sprinklers">Sprinklers</h2>
+				</div>
+				<div className="row sprinkDiv" style={{background: 'white'}}>
+					<div id="sprinklerDscrpt">
+						<h2 className="sprinklers left-align">Sprinklers</h2>
 						&nbsp;
-						<h5>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam eget porta nulla, id
+						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam eget porta nulla, id
 						 lacinia dui. Mauris euismod iaculis sem. Suspendisse finibus, augue nec sollicitudin rutrum,
 						 velit mauris molestie enim, et commodo elit velit id mauris. Etiam at efficitur metus, 
 						 sed posuere nulla. Nullam porta viverra faucibus. Nam magna diam, pharetra sed sollicitudin 
 						 consequat, consectetur id eros. Nam fringilla lectus sit amet nunc vestibulum, sit amet 
-						 bibendum erat sollicitudin. Etiam vitae bibendum purus. Cras blandit felis in commodo imperdiet.
-						 Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Quisque et
-						 odio nisl. Nulla sagittis sagittis dui, quis commodo ante. Nulla vulputate vehicula quam a tincidunt.
-						 Ut scelerisque nisl sed justo maximus interdum. Cras est massa, pellentesque at suscipit at,
-						 vestibulum et ligula. Donec sollicitudin tortor tellus, vitae dignissim sapien mattis sit
-						 amet.</h5>
+						 bibendum erat sollicitudin. Etiam vitae bibendum purus. Cras blandit felis in commodo 
+						 imperdiet.
+						 </p>
+					</div>
+					 &nbsp;
+					 <div className="row imgs-div">
+						<div className="slides-wrapper">
+							<div ref="slide3" >
+								<img style={{height: '400px', width: '100%'}} src={'pictures/sod1.jpg'} />
+							</div>
+							<div ref="slide3" >
+								<img style={{height: '400px', width: '100%'}} src={'pictures/sod2.jpg'} />
+							</div>								
+						</div>
+					</div>
+				</div>
+				<div className="row fenceDiv">
+					<div id="fenceDscrpt">
+						<h2 className="fencing left-align">Fencing</h2>
+						&nbsp;
+						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam eget porta nulla, id
+						 lacinia dui. Mauris euismod iaculis sem. Suspendisse finibus, augue nec sollicitudin rutrum,
+						 velit mauris molestie enim, et commodo elit velit id mauris. Etiam at efficitur metus, 
+						 sed posuere nulla. Nullam porta viverra faucibus. Nam magna diam, pharetra sed sollicitudin 
+						 consequat, consectetur id eros. Nam fringilla lectus sit amet nunc vestibulum, sit amet 
+						 bibendum erat sollicitudin. Etiam vitae bibendum purus. Cras blandit felis in commodo 
+						 imperdiet.
+						 </p>
+					</div>
+					 &nbsp;
+					 <div className="row imgs-div">
+						<div className="slides-wrapper">
+							<div ref="slide3" >
+								<img style={{height: '400px', width: '100%'}} src={'pictures/tramp1.jpg'} />
+							</div>							
+						</div>
 					</div>
 				</div>
 			</div>
