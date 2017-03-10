@@ -48,7 +48,7 @@ class Home extends React.Component {
 		  			<ul className="right hide-on-med-and-down">
 		  				<li><a ref="land" className="nav-links land" onClick={this.goTo}>Landscaping</a></li>
 		  				<li><a ref="lights" className="nav-links lights" onClick={this.goTo}>Holiday Lights</a></li>
-		  				<li><a ref="contact" className="nav-links contact" onClick={this.goTo}>Contact Us</a></li>
+		  				<li><a ref="contact" className="nav-links contact" onClick={this.goTo}>About</a></li>
 		  			</ul>
 		  			<ul className="side-nav" id="mobile">
 		  				<li><a ref="land" className="nav-links land" onClick={this.goTo}>Landscaping</a></li>
