@@ -17,12 +17,12 @@ class SecondaryNav extends React.Component {
 		  			<ul className="right hide-on-med-and-down">
 		  				<li><Link to="/landscape" ref="land" className="nav-links land">Landscaping</Link></li>
 		  				<li><Link to="/holidaylights" ref="lights" className="nav-links lights">Holiday Lights</Link></li>
-		  				<li><Link ref="contact" className="nav-links contact">Contact Us</Link></li>
+		  				<li><Link to="/about" ref="about" className="nav-links about">About</Link></li>
 		  			</ul>
 		  			<ul className="side-nav" id="mobile">
 		  				<li><Link to="/landscape" ref="land" className="nav-links land">Landscaping</Link></li>
 		  				<li><Link to="/holidaylights" ref="lights" className="nav-links lights">Holiday Lights</Link></li>
-		  				<li><Link ref="contact" className="nav-links contact">Contact Us</Link></li>
+		  				<li><Link to="/about" ref="about" className="nav-links about">About</Link></li>
 		  			</ul>
 		  		</div>
 		  	</nav>

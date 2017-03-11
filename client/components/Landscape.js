@@ -5,8 +5,6 @@ import SecondaryNav from './SecondaryNav';
 class Landscape extends React.Component {
 	constructor(props) {
 		super(props);
-		this.scrollLeft = this.scrollLeft.bind(this);
-		this.scrollRight = this.scrollRight.bind(this);
 		this.fixedServRow = this.fixedServRow.bind(this);
 		this.goToTop = this.goToTop.bind(this);
 		this.goToLinks = this.goToLinks.bind(this);
@@ -25,42 +23,6 @@ class Landscape extends React.Component {
 	componentWillUnmount() {
 		window.removeEventListener('scroll', this.fixedServRow);
 		document.body.classList.remove('serv-row-fixed');
-	}
-
-	scrollLeft(e) {
-		const pics = document.querySelectorAll('.slides');
-
-		if(this.state.count > 0){
-			this.setState({ count: this.state.count - 1}, () => {
-				if(this.state.count >= 0) {
-					pics.forEach( (pic) => {
-						pic.classList.remove('activated');
-					})
-				}
-
-				if(this.state.count <= pics.length - 1) {
-					pics[this.state.count].classList.add('activated');
-				}
-			})
-		}
-	}
-
-	scrollRight(e) {
-		const pics = document.querySelectorAll('.slides');
-
-		if(this.state.count < pics.length - 1) {
-			this.setState({count: this.state.count + 1}, () => {
-				if(this.state.count >= 0) {
-					pics.forEach( (pic) => {
-						pic.classList.remove('activated');
-					})
-				}
-
-				if(this.state.count < pics.length) {
-					pics[this.state.count].classList.add('activated');
-				}
-			})
-		}
 	}
 
 	fixedServRow(e) {
@@ -107,6 +69,12 @@ class Landscape extends React.Component {
 			}, 700);
 		}
 
+		if(elementId.matches('#toRetaining')) {
+			$('html, body').clearQueue().animate({
+				scrollTop: $('.retainDiv').offset().top - bottomOfNewLinks
+			}, 1000);
+		}
+
 	}
 	
 	render() {
@@ -117,46 +85,30 @@ class Landscape extends React.Component {
 				<div className="serv-row">
 					<span id="topOfPage" className="top" onClick={this.goToTop}>Go To Top</span>
 					<span id="toSprinklers" className="work" onClick={this.goToLinks}>Sprinklers</span>
-					<span id="toFencing"className="work" onClick={this.goToLinks}>Fencing</span>
-					<span className="work">Retaining Walls</span>
+					<span id="toFencing" className="work" onClick={this.goToLinks}>Fencing</span>
+					<span id="toRetaining" className="work" onClick={this.goToLinks}>Retaining Walls</span>
 				</div>
 				<hr />
-				<div className="overview">
-					<div className="row">
-						<h2>Maintenance</h2>
-						&nbsp;
-						<p>Our family has been providing landscape maintenance and yard clean-ups 
+				<div className="row overview">
+					<h2 className="col s12" style={{paddingBottom: '3rem'}}>Maintenance</h2>
+					<div id="maintainDscrpt" className="row">
+						<p className="col s12 m6">Our family has been providing landscape maintenance and yard clean-ups 
 						along the Wasatch Front since 2007. Our goal is to provide you with fast 
 						services that leave a lasting impression. Here are some quick samples of some
 						of our work. Call us to come out to your home and provide you with a free
 						estimate.</p>
-					</div>
-					<div className="row imgs-div">
-						<div className="controls">
-							<button type="button" className="carousel-cntrl cntrl-left" onClick={this.scrollLeft}>
-								<i className="material-icons" style={{fontSize: '5rem'}}>chevron_left</i>
-							</button>
-							<button type="button" className="carousel-cntrl cntrl-right" onClick={this.scrollRight}>
-								<i className="material-icons" style={{fontSize: '5rem'}}>chevron_right</i>
-							</button>
-						</div>
-						<div className="slides-wrapper">
-							<div ref="slide1" className="slides slide1">
-								<img style={{height: '400px', width: '100%'}} src={'pictures/retaining1.jpg'} alt={'pictures/landscape2copy.jpg'} />
+						<div className="row imgs-div col s12 m6">
+							<div>
+								<div ref="slide1" className="slides slide1">
+									<img style={{height: '400px', width: '100%'}} src={'pictures/retaining1.jpg'} alt={'pictures/landscape2copy.jpg'} />
+								</div>						
 							</div>
-							<div ref="slide2" className="slides slide2">
-								<img style={{height: '400px', width: '100%'}} src={'pictures/retaining2.jpg'} alt={'pictures/landscape2copy.jpg'} />
-							</div>
-							<div ref="slide3" className="slides slide3">
-								<img style={{height: '400px', width: '100%'}} src={'pictures/retaining3.jpg'} alt={'pictures/landscape2copy.jpg'} />
-							</div>							
 						</div>
 					</div>
 				</div>
 				<div className="row sprinkDiv" style={{background: 'white'}}>
 					<div id="sprinklerDscrpt">
-						<h2 className="sprinklers left-align">Sprinklers</h2>
-						&nbsp;
+						<h2 className="sprinklers left-align col s12" style={{paddingBottom: '3rem', paddingLeft: '0'}}>Sprinklers</h2>
 						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam eget porta nulla, id
 						 lacinia dui. Mauris euismod iaculis sem. Suspendisse finibus, augue nec sollicitudin rutrum,
 						 velit mauris molestie enim, et commodo elit velit id mauris. Etiam at efficitur metus, 
@@ -166,23 +118,18 @@ class Landscape extends React.Component {
 						 imperdiet.
 						 </p>
 					</div>
-					 &nbsp;
 					 <div className="row imgs-div">
-						<div className="slides-wrapper">
-							<div ref="slide3" >
-								<img style={{height: '400px', width: '100%'}} src={'pictures/sod1.jpg'} />
-							</div>
-							<div ref="slide3" >
-								<img style={{height: '400px', width: '100%'}} src={'pictures/sod2.jpg'} />
-							</div>								
+						<div className="sprink-pic">
+							<div>
+								<img style={{height: '400px', width: '70%'}} src={'pictures/sod1.jpg'} />
+							</div>							
 						</div>
 					</div>
 				</div>
 				<div className="row fenceDiv">
 					<div id="fenceDscrpt">
-						<h2 className="fencing left-align">Fencing</h2>
-						&nbsp;
-						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam eget porta nulla, id
+						<h2 className="fencing left-align col s12" style={{paddingBottom: '3rem'}}>Fencing</h2>
+						<p className="col m6 s12">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam eget porta nulla, id
 						 lacinia dui. Mauris euismod iaculis sem. Suspendisse finibus, augue nec sollicitudin rutrum,
 						 velit mauris molestie enim, et commodo elit velit id mauris. Etiam at efficitur metus, 
 						 sed posuere nulla. Nullam porta viverra faucibus. Nam magna diam, pharetra sed sollicitudin 
@@ -191,11 +138,28 @@ class Landscape extends React.Component {
 						 imperdiet.
 						 </p>
 					</div>
-					 &nbsp;
+					 <div className="row imgs-div col m6 s12">
+						<div className="fenc-pic">
+							<div>
+								<img style={{height: '400px', width: '85%'}} src={'pictures/tramp1.jpg'} />
+							</div>							
+						</div>
+					</div>
+				</div>
+				<div className="row retainDiv" style={{background: 'white'}}>
+					<div id="retainDscrpt">
+						<h2 className="retainingWall left-align col s12" style={{paddingBottom: '3rem', paddingLeft: '0'}}>Retaining Wall</h2>
+						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam eget porta nulla, id
+						 lacinia dui. Mauris euismod iaculis sem. Suspendisse finibus, augue nec sollicitudin rutrum,
+						 velit mauris molestie enim, et commodo elit velit id mauris. Etiam at efficitur metus, 
+						 sed posuere nulla. Nullam porta viverra faucibus. Nam magna diam, pharetra sed sollicitudin 
+						 consequat, consectetur id eros.
+						 </p>
+					</div>
 					 <div className="row imgs-div">
-						<div className="slides-wrapper">
-							<div ref="slide3" >
-								<img style={{height: '400px', width: '100%'}} src={'pictures/tramp1.jpg'} />
+						<div className="retain-pic">
+							<div>
+								<img style={{height: '400px', width: '60%'}} src={'pictures/retaining3.jpg'} />
 							</div>							
 						</div>
 					</div>

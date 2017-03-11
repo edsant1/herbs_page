@@ -5,13 +5,14 @@ body {
 }
 
 h2 {
-	font-size: 10vh !important;
+	font-size: 9vh !important;
 	font-weight: 100 !important;
 }
 
 p {
-	font-size: 4vh;
+	font-size: 2rem;
 	text-align: left;
+	margin-top: 0;
 }
 
 nav {
@@ -26,12 +27,11 @@ nav ul a.nav-links {
 }
 
 .overview {
-	margin-bottom: 1rem;
-	padding-top: 4rem;
 	text-align: left;
-	padding-left: 15%;
-	padding-right: 15%;	
-	padding-bottom: 6rem
+	padding-top: 4rem;
+	padding-bottom: 6rem;
+	padding-left: 7%;
+	padding-right: 7%;	
 	/*position: relative;*/
 }
 
@@ -243,6 +243,9 @@ body.serv-row-fixed span.top {
 	-webkit-box-ordinal-group: 1;
 }
 
+#maintainDscrpt {
+}
+
 .sprinkDiv {
 	align-items: center;
 	padding-top: 6rem;
@@ -250,8 +253,13 @@ body.serv-row-fixed span.top {
 }
 
 #sprinklerDscrpt {
-	padding-left: 15%;
-	padding-right: 15%;	
+	padding-left: 7%;
+	padding-right: 7%;	
+}
+
+.sprink-pic {
+	text-align: center;
+	padding-top: 3rem;
 }
 
 .fenceDiv {
@@ -261,8 +269,24 @@ body.serv-row-fixed span.top {
 }
 
 #fenceDscrpt {
-	padding-left: 15%;
-	padding-right: 15%;	
+	padding-left: 7%;
+	padding-right: 7%;	
+}
+
+.row.retainDiv {
+	align-items: center;
+	padding-top: 6rem;
+	padding-bottom: 6rem;
+	margin-bottom: 0;
+}
+#retainDscrpt {
+	padding-left: 7%;
+	padding-right: 7%;	
+}
+
+.retain-pic {
+	text-align: center;
+	padding-top: 3rem
 }
 
 .ft-bkgrd {
