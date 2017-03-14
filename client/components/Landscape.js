@@ -100,7 +100,7 @@ class Landscape extends React.Component {
 						<div className="row imgs-div col s12 m6">
 							<div>
 								<div ref="slide1" className="slides slide1">
-									<img style={{height: '400px', width: '100%'}} src={'pictures/retaining1.jpg'} alt={'pictures/landscape2copy.jpg'} />
+									<img style={{height: '400px', width: '100%'}} src={'pictures/landscape4.jpg'} />
 								</div>						
 							</div>
 						</div>
@@ -121,7 +121,7 @@ class Landscape extends React.Component {
 					 <div className="row imgs-div">
 						<div className="sprink-pic">
 							<div>
-								<img style={{height: '400px', width: '70%'}} src={'pictures/sod1.jpg'} />
+								<img style={{height: '400px', width: '70%'}} src={'pictures/sprinklers1.jpg'} />
 							</div>							
 						</div>
 					</div>
@@ -141,7 +141,7 @@ class Landscape extends React.Component {
 					 <div className="row imgs-div col m6 s12">
 						<div className="fenc-pic">
 							<div>
-								<img style={{height: '400px', width: '85%'}} src={'pictures/tramp1.jpg'} />
+								<img style={{height: '400px', width: '85%'}} src={'pictures/fenc1.png'} />
 							</div>							
 						</div>
 					</div>
@@ -159,7 +159,7 @@ class Landscape extends React.Component {
 					 <div className="row imgs-div">
 						<div className="retain-pic">
 							<div>
-								<img style={{height: '400px', width: '60%'}} src={'pictures/retaining3.jpg'} />
+								<img style={{height: '400px', width: '65%'}} src={'pictures/retaining4.png'} />
 							</div>							
 						</div>
 					</div>
