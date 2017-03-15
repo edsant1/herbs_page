@@ -290,18 +290,27 @@ body.serv-row-fixed span.top {
 }
 
 .ft-bkgrd {
-	display: flex;
-	height: 35vh;
+	height: 100%;
 	background-color: #303c40; 
 	color: white;
-	flex-direction: column;
-	align-items: center;
+	padding-left: 10%;
+}
+
+div#content .ft-bkgrd {
+	margin-bottom: 0;
+}
+
+div.row.ft-bkgrd .logoDiv {
+	height: 100%;
+	padding-top: 5rem;
+}
+
+div.contactDiv p{
+	margin-bottom: .7rem;
 }
 
 div.cp-cby p{
 	font-size: .70em;
 	text-align: center;
 }
-
-
 
