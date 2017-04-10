@@ -4,9 +4,6 @@ import SecondaryNav from './SecondaryNav';
 class XmasLights extends React.Component {
 	constructor(props) {
 		super(props);
-		this.scrollLeft = this.scrollLeft.bind(this);
-		this.scrollRight = this.scrollRight.bind(this);
-		this.state = { count: 0 };
 	}
 
 	componentDidMount() {
@@ -15,42 +12,6 @@ class XmasLights extends React.Component {
   		closeOnClick: true
   	});
 	}
-
-	scrollLeft(e) {
-		const pics = document.querySelectorAll('.slides');
-
-		if(this.state.count > 0){
-			this.setState({ count: this.state.count - 1}, () => {
-				if(this.state.count >= 0) {
-					pics.forEach( (pic) => {
-						pic.classList.remove('activated');
-					})
-				}
-
-				if(this.state.count <= pics.length - 1) {
-					pics[this.state.count].classList.add('activated');
-				}
-			})
-		}
-	}
-
-	scrollRight(e) {
-		const pics = document.querySelectorAll('.slides');
-
-		if(this.state.count < pics.length - 1) {
-			this.setState({count: this.state.count + 1}, () => {
-				if(this.state.count >= 0) {
-					pics.forEach( (pic) => {
-						pic.classList.remove('activated');
-					})
-				}
-
-				if(this.state.count < pics.length) {
-					pics[this.state.count].classList.add('activated');
-				}
-			})
-		}
-	}
 	
 	render() {
 		return(
@@ -58,7 +19,7 @@ class XmasLights extends React.Component {
 				<SecondaryNav />
 				<div className="overview">
 					<div className="row">
-						<h2>This is the Holiday lights page</h2>
+						<h2>Holiday Lights</h2>
 						&nbsp;
 						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras sit amet urna eros.
 						 Donec sagittis tellus ac pulvinar convallis. Donec vel auctor eros. Nullam vel vestibulum quam.

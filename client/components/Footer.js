@@ -10,8 +10,11 @@ class Footer extends React.Component {
 					<p>Call or text: 801.668.5796</p>
 					<p>Email: herb84054@gmail.com</p>
 				</div>
-				<div className="logoDiv col m3 s6 offset-m2">
+				<div className="logoDiv col m1 s6 offset-m2">
 					<img src={'socialMediaLogos/FB-f-Logo__white_58.png'} />
+				</div>
+				<div className=" logoDiv col m2 s6">
+					<img src={'socialMediaLogos/glyph-logo_May2016.png'} />
 				</div>
 				<div className=" col m12 s12 cp-cby">
 					<p>Website by CK</p>
